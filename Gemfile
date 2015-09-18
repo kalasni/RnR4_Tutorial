@@ -6,6 +6,9 @@ gem 'rails', '4.2.3'
 
 gem 'bootstrap-sass'
 
+# Do password digest with has_secure_password function in User model
+gem 'bcrypt'
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
