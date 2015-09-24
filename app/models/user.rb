@@ -3,10 +3,14 @@ class User < ActiveRecord::Base
   # Callback que convierte a minusculas el email antes de guardarlo en la bd
   before_save { self.email = email.downcase }
 
+  # Se puede modificar el email directamente usando el bang !
+  #before_save { email.downcase! }
+
 # similar a  validates(:name, presence: true, length: {maximum: 50})
   validates :name, presence: true, length: {maximum: 50 }
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX =/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness:{ case_sensitive: false }
