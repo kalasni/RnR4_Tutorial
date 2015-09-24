@@ -60,4 +60,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+
+  # webserver for production
+  gem 'puma'
 end
