@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to user   # Similar to user_url(user)
+      redirect_back_or user   # from sessions_helper
     else
       # With flash.now its content disappear as soon as there is an additional request,
       flash.now[:danger] = 'Invalid email/password combination'
