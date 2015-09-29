@@ -4,15 +4,7 @@
 <%= will_paginate %>
 
 <ul class="users">
-  <% @users.each do |user| %>
-    <li>
-
-        <!-- Call /views/users/_user.html.erb.
-        Rails infers that @users is a list of User objects and automatically
-        iterates through them  -->
-        <%= render @users %>
-    </li>
-  <% end %>
+  <%= render @users %>
 </ul>
 
 <%= will_paginate %>
